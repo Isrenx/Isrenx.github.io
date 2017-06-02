@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-01T03:44:05.000Z</updated>
+  <updated>2017-06-02T02:28:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用hexo搭建GitHub博客填坑指南</title>
+    <link href="http://yoursite.com/2017/06/01/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAGitHub%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91%E6%8C%87%E5%8D%97/"/>
+    <id>http://yoursite.com/2017/06/01/使用hexo搭建GitHub博客填坑指南/</id>
+    <published>2017-06-01T03:52:40.000Z</published>
+    <updated>2017-06-02T02:28:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在得知hexo可以快速搭建博客之后，终于在端午假期回公司之后的第一天把这个坑给填了。下面就来写一下我用hexo搭建这个博客的过程。</p>
+<hr>
+<h1 id="前提-GitHub账号注册完成，在本地创建秘钥之后和GitHub连接成功；"><a href="#前提-GitHub账号注册完成，在本地创建秘钥之后和GitHub连接成功；" class="headerlink" title="前提:GitHub账号注册完成，在本地创建秘钥之后和GitHub连接成功；"></a>前提:GitHub账号注册完成，在本地创建秘钥之后和GitHub连接成功；</h1><p>GitHub注册也很简单，登录<a href="https://github.com/" target="_blank" rel="external">GitHub</a>,然后点击右侧的注册、填入相应的信息即可。<br>如何在本地创建SSH秘钥和GitHub连接，可以参考这篇文章：<a href="http://www.jianshu.com/p/31cbbbc5f9fa/" target="_blank" rel="external">http://www.jianshu.com/p/31cbbbc5f9fa/</a></p>
+<h1 id="一、创建GitHub仓库"><a href="#一、创建GitHub仓库" class="headerlink" title="一、创建GitHub仓库"></a>一、创建GitHub仓库</h1><p>注：GitHub为用户提供项目链接，每个用户可以生成唯一的GitHub个人链接，这个唯一的表示一个账号只能有一个URL。这个URL的格式是<code>your-name.github.io</code><br></p>
+<h1 id="二、安装node-js"><a href="#二、安装node-js" class="headerlink" title="二、安装node.js"></a>二、安装node.js</h1><p>进入<a href="https://nodejs.org/en/" target="_blank" rel="external">node官网</a>下载node,然后按照提示安装即可；</p>
+<h1 id="三、安装git"><a href="#三、安装git" class="headerlink" title="三、安装git"></a>三、安装git</h1><p>1.进入<a href="https://git-scm.com/downloads" target="_blank" rel="external">git官网</a>下载最新版本的git,下载完成后按照提示进行安装。</p>
+<h1 id="四、安装hexo"><a href="#四、安装hexo" class="headerlink" title="四、安装hexo"></a>四、安装hexo</h1><p>注：前面安装node.js和git是为安装hexo做一个铺垫，hexo安装才是最重要的。<br>1.打开命令行（window在菜单栏输入cmd），在本地创建一个项目文件夹作为博客存放文件的地址。</p>
+<blockquote>
+<p>$ cd 项目目录</p>
+</blockquote>
+<p>注：项目目录可以使用拖拽的方式将项目的文件夹拖到命令行中即可；<br>2.使用npm安装hexo</p>
+<blockquote>
+<p>$ npm install -g hexo-cli</p>
+</blockquote>
+<p>3.安装好之后输入hexo检查是否安装成功</p>
+<blockquote>
+<p>$ hexo</p>
+</blockquote>
+<p>注：如果出现以下图中代码，则说明安装成功</p>
+<p>4.初始化博客</p>
+<blockquote>
+<p>$ hexo init</p>
+</blockquote>
+<p>5.在项目下安装npm</p>
+<blockquote>
+<p>$ npm install<br>注：在安装好npm和初始化博客文件之后，在博客的文件夹下面会生成很多文件。   </p>
+</blockquote>
+<p>6.配置博客<br> 1）打开本地博客文件夹里面的<code>_config.yml_</code>,设置博客的一些基础信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">title: Isrenx   </div><div class="line">subtitle: 在这里记录学习轨迹、记录生活。   </div><div class="line">description: Stay hungry,Stay foolish!   </div><div class="line">author: Victor   </div><div class="line">language: zh-Hans   </div><div class="line">timezone: Asia/Shanghai</div><div class="line">```   </div><div class="line">1.其中的timezone是设置时区，其中中国区的都要设置`Asia/Shanghai`,因为根据时区的设计规则，中国区的时区是按照这个形式来指明的，切忌不要把shanghai改成beijing或者其他地区的名字，否则就会在后面添加文章的时候出错。   </div><div class="line">2.`language`是设置博客的语言，一般中文用`zh-CN`,这里我用的`zh-Hans`是因为我用的next主题的中文设置是这个。   </div><div class="line">注：所有的`_config.yml_`中的设置，冒号：后面都要输入一个空格再加上设置的内容，否则会报错。</div><div class="line">##### 坑：</div></pre></td></tr></table></figure></p>
+<p>ERROR Process failed: _posts/firstdemo.md<br>TypeError: Cannot read property ‘offset’ of null<br>at Object.exports.timezone (/Users/victor/Desktop/workplace/IsrenxBlog/node_modules/hexo/lib/plugins/processor/common.js:44:40)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注：如果是报上面这种错误，则说明是timezone设置错误，时区一定要设置正确，中国区必须是`Asia/Shanghai`</div><div class="line">    </div><div class="line">7.配置部署，与GitHub对应</div></pre></td></tr></table></figure></p>
+<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/Isrenx/Isrenx.github.io.git" target="_blank" rel="external">https://github.com/Isrenx/Isrenx.github.io.git</a><br>  branch: master<br>```<br>其中repo后面输入你之前建好的仓库地址。。<br>仓库地址可以如下位置中找到：</p>
+<p>8.在本地查看博客是否搭建成功</p>
+<blockquote>
+<p>$ hexo clean #清楚之前的文件     </p>
+<p>$ hexo g #更新项目下的修改文件    </p>
+<p>$ hexo s #生成本地的链接    </p>
+</blockquote>
+<p>运行以上命令之后进入浏览器访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>,如果出现hexo的博客页面，则说明搭建成功。   </p>
+<p>9.复制主题</p>
+<blockquote>
+<p>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next</p>
+</blockquote>
+<p>10.启用next主题<br>打开你的博客文件夹根目录下面的<code>_config.yml_</code>，找到themes，修改成next。这样就代表启用next主题，以后切换成其他主题也要在这里进行修改。</p>
+<p>11.自定义博客<br>打开博客所在的文件夹下面的themes–&gt;next–&gt;.config.yml<br>根据<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">next主题官网</a>中的说明修改此文件中的代码来自定义自己的博客。<br>注：因为next官网中对于各个部分都介绍的很详细，所以我就不赘述了，大家可以看官网跟着操作就行。    </p>
+<p>12.将本地的博客主题文件push到GitHub上   </p>
+<blockquote>
+<p>cd themes/next<br>git pull     </p>
+</blockquote>
+<p>13.将生成的其他文件上传到GitHub   </p>
+<blockquote>
+<p>$ cd 博客文件夹根目录<br>$ hexo clean<br>$ hexo -g d    </p>
+</blockquote>
+<h3 id="至此，博客已经搭建完成。访问https-your-name-github-io-即可访问你的博客。"><a href="#至此，博客已经搭建完成。访问https-your-name-github-io-即可访问你的博客。" class="headerlink" title="至此，博客已经搭建完成。访问https://your-name.github.io/  即可访问你的博客。"></a>至此，博客已经搭建完成。访问<a href="https://your-name.github.io/" target="_blank" rel="external">https://your-name.github.io/</a>  即可访问你的博客。</h3><h1 id="五、发表文章"><a href="#五、发表文章" class="headerlink" title="五、发表文章"></a>五、发表文章</h1><p>1.在命令行中通过cd进入博客文件夹，然后在命令行中输入：</p>
+<blockquote>
+<p>$ hexo new “文章名称”   </p>
+</blockquote>
+<p>执行这个命令就在根目录下的source的_posts文件夹下面创建了一个md文件，通过在这个md文件里面使用markdown语法写文章即可。写好后的文章执行以下命令上传到GitHub：    </p>
+<blockquote>
+<p>$ hexo clean<br>$ hexo -g d </p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在得知hexo可以快速搭建博客之后，终于在端午假期回公司之后的第一天把这个坑给填了。下面就来写一下我用hexo搭建这个博客的过程。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;前提-GitHub账号注册完成，在本地创建秘钥之后和GitHub连接成功；&quot;&gt;&lt;a href=&quot;#前提-Gi
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="GitHub" scheme="http://yoursite.com/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>第一篇hexo博客，关于我，关于园子。</title>
