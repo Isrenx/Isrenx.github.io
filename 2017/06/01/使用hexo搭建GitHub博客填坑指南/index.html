@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/01/使用hexo搭建GitHub博客填坑指南/index.html">
 <meta property="og:site_name" content="Isrenx">
 <meta property="og:description" content="在得知hexo可以快速搭建博客之后，终于在端午假期回公司之后的第一天把这个坑给填了。下面就来写一下我用hexo搭建这个博客的过程。  前提:GitHub账号注册完成，在本地创建秘钥之后和GitHub连接成功；GitHub注册也很简单，登录GitHub,然后点击右侧的注册、填入相应的信息即可。如何在本地创建SSH秘钥和GitHub连接，可以参考这篇文章：http://www.jianshu.com/">
-<meta property="og:updated_time" content="2017-06-02T02:50:07.000Z">
+<meta property="og:updated_time" content="2017-06-14T10:33:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用hexo搭建GitHub博客填坑指南">
 <meta name="twitter:description" content="在得知hexo可以快速搭建博客之后，终于在端午假期回公司之后的第一天把这个坑给填了。下面就来写一下我用hexo搭建这个博客的过程。  前提:GitHub账号注册完成，在本地创建秘钥之后和GitHub连接成功；GitHub注册也很简单，登录GitHub,然后点击右侧的注册、填入相应的信息即可。如何在本地创建SSH秘钥和GitHub连接，可以参考这篇文章：http://www.jianshu.com/">
@@ -400,11 +400,11 @@
 <blockquote>
 <p>$ npm install<br>注：在安装好npm和初始化博客文件之后，在博客的文件夹下面会生成很多文件。   </p>
 </blockquote>
-<p>6.配置博客<br> 1）打开本地博客文件夹里面的<code>_config.yml_</code>,设置博客的一些基础信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: Isrenx   </div><div class="line">subtitle: 在这里记录学习轨迹、记录生活。   </div><div class="line">description: Stay hungry,Stay foolish!   </div><div class="line">author: Victor   </div><div class="line">language: zh-Hans   </div><div class="line">timezone: Asia/Shanghai</div></pre></td></tr></table></figure></p>
+<p>6.配置博客<br> 1）打开本地博客文件夹里面的<code>_config.yml_</code>,设置博客的一些基础信息<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: Isrenx   </div><div class="line">subtitle: 在这里记录学习轨迹、记录生活。   </div><div class="line">description: Stay hungry,Stay foolish!   </div><div class="line">author: Victor   </div><div class="line">language: zh-Hans   </div><div class="line">timezone: Asia/Shanghai</div></pre></td></tr></table></figure></p>
 <p>1.其中的timezone是设置时区，其中中国区的都要设置<code>Asia/Shanghai</code>,因为根据时区的设计规则，中国区的时区是按照这个形式来指明的，切忌不要把shanghai改成beijing或者其他地区的名字，否则就会在后面添加文章的时候出错。<br>2.<code>language</code>是设置博客的语言，一般中文用<code>zh-CN</code>,这里我用的<code>zh-Hans</code>是因为我用的next主题的中文设置是这个。<br>注：所有的<code>_config.yml_</code>中的设置，冒号：后面都要输入一个空格再加上设置的内容，否则会报错。</p>
-<h5 id="坑："><a href="#坑：" class="headerlink" title="坑："></a>坑：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ERROR Process failed: _posts/firstdemo.md</div><div class="line">TypeError: Cannot read property &apos;offset&apos; of null</div><div class="line">at Object.exports.timezone (/Users/victor/Desktop/workplace/IsrenxBlog/node_modules/hexo/lib/plugins/processor/common.js:44:40)</div></pre></td></tr></table></figure>
+<h5 id="坑："><a href="#坑：" class="headerlink" title="坑："></a>坑：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ERROR Process failed: _posts/firstdemo.md</div><div class="line"><span class="built_in">TypeError</span>: Cannot read property <span class="string">'offset'</span> <span class="keyword">of</span> <span class="literal">null</span></div><div class="line">at <span class="built_in">Object</span>.exports.timezone (<span class="regexp">/Users/</span>victor/Desktop/workplace/IsrenxBlog/node_modules/hexo/lib/plugins/processor/common.js:<span class="number">44</span>:<span class="number">40</span>)</div></pre></td></tr></table></figure>
 <p>注：如果是报上面这种错误，则说明是timezone设置错误，时区一定要设置正确，中国区必须是<code>Asia/Shanghai</code></p>
-<p>7.配置部署，与GitHub对应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/Isrenx/Isrenx.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>7.配置部署，与GitHub对应<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https:<span class="comment">//github.com/Isrenx/Isrenx.github.io.git</span></div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
 <p>其中repo后面输入你之前建好的仓库地址。。<br>仓库地址可以如下位置中找到：</p>
 <p>8.在本地查看博客是否搭建成功</p>
 <blockquote>
@@ -598,10 +598,10 @@
             
             
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories/index-1.html">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -609,10 +609,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
