@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Isrenx</title>
-  <subtitle>在这里记录学习轨迹、记录生活。</subtitle>
+  <title>Isrenx | 做个努力前进的Coder</title>
+  <subtitle>成为一个Coder。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
