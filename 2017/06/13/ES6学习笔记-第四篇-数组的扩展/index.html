@@ -529,6 +529,21 @@
       <div id="lv-container" data-id="city" data-uid="MTAyMC8yODkwOS81NDc4"></div>
     
   </div>
+  <div id="container"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href
+    owner: '20449503',
+    repo: 'isrenx.github.io',
+    oauth: {
+      client_id: 'efb975d1400010fe689a',
+      client_secret: '2d7df6d80d33e0889a0bece8e705f520c1cbb6ec',
+    },
+  })
+  gitment.render('container')
+  </script>
 
 
         </div>
