@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="hexo,gitment," />
 
 
 
@@ -92,16 +92,23 @@
 
 
 
-<meta name="description" content="Stay hungry,Stay foolish!">
+<meta name="description" content="去年最初倒腾这个blog的时候，国内还能正常访问来必力，来必力用来做评论虽然没有之前网易出的那个更加符合我们国内用户的习惯。可惜这会来必力使用科学上网的方式访问加载也有问题了。重新捡起这个blog的时候，有很多hexo的东西都忘了，在新电脑上又折腾了一番，幸好之前有笔记，所以捡起来也快。在这个过程中，了解到现在用gitment做这种单页blog最适合，一起都依赖github。不过也还是要注意不要浪">
+<meta name="keywords" content="hexo,gitment">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo next主题添加Gitment评论">
 <meta property="og:url" content="http://yoursite.com/2018/08/29/Hexo-next主题添加Gitment评论/index.html">
 <meta property="og:site_name" content="人二衣羊">
-<meta property="og:description" content="Stay hungry,Stay foolish!">
-<meta property="og:updated_time" content="2018-08-29T08:40:24.000Z">
+<meta property="og:description" content="去年最初倒腾这个blog的时候，国内还能正常访问来必力，来必力用来做评论虽然没有之前网易出的那个更加符合我们国内用户的习惯。可惜这会来必力使用科学上网的方式访问加载也有问题了。重新捡起这个blog的时候，有很多hexo的东西都忘了，在新电脑上又折腾了一番，幸好之前有笔记，所以捡起来也快。在这个过程中，了解到现在用gitment做这种单页blog最适合，一起都依赖github。不过也还是要注意不要浪">
+<meta property="og:image" content="http://yoursite.com/2018/08/29/Hexo-next主题添加Gitment评论/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/29/Hexo-next主题添加Gitment评论/6.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/29/Hexo-next主题添加Gitment评论/7.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/29/Hexo-next主题添加Gitment评论/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/29/Hexo-next主题添加Gitment评论/3.png">
+<meta property="og:updated_time" content="2018-08-29T09:56:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo next主题添加Gitment评论">
-<meta name="twitter:description" content="Stay hungry,Stay foolish!">
+<meta name="twitter:description" content="去年最初倒腾这个blog的时候，国内还能正常访问来必力，来必力用来做评论虽然没有之前网易出的那个更加符合我们国内用户的习惯。可惜这会来必力使用科学上网的方式访问加载也有问题了。重新捡起这个blog的时候，有很多hexo的东西都忘了，在新电脑上又折腾了一番，幸好之前有笔记，所以捡起来也快。在这个过程中，了解到现在用gitment做这种单页blog最适合，一起都依赖github。不过也还是要注意不要浪">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/29/Hexo-next主题添加Gitment评论/4.png">
 
 
 
@@ -315,6 +322,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -350,7 +379,19 @@
       
 
       
-        
+        <p>去年最初倒腾这个blog的时候，国内还能正常访问来必力，来必力用来做评论虽然没有之前网易出的那个更加符合我们国内用户的习惯。<br>可惜这会来必力使用科学上网的方式访问加载也有问题了。<br>重新捡起这个blog的时候，有很多hexo的东西都忘了，在新电脑上又折腾了一番，幸好之前有笔记，所以捡起来也快。<br>在这个过程中，了解到现在用<code>gitment</code>做这种单页blog最适合，一起都依赖<code>github</code>。不过也还是要注意不要浪费<code>github</code>资源。毕竟听说现在各种“职业”的同学都来用<code>github</code>了。  </p>
+<p><code>Gitment</code>是基于<code>GitHub Issues</code>评论系统做的，所以强依赖<code>github</code>。GitHub blog单页直接跳转GitHub授权很方便。</p>
+<h1 id="一、接入前准备"><a href="#一、接入前准备" class="headerlink" title="一、接入前准备"></a>一、接入前准备</h1><h2 id="1-注册OAuth-Application"><a href="#1-注册OAuth-Application" class="headerlink" title="1.注册OAuth Application"></a>1.注册OAuth Application</h2><p><a href="https://github.com/settings/applications/new" target="_blank" rel="external">Register a new OAuth application</a>—&gt;先到这里创建一个新的OAuth Application。<br><img src="4.png" alt=""><br>创建完成之后会生成<code>Client ID</code>和<code>Client Secret</code>；</p>
+<h2 id="2-引用gitment"><a href="#2-引用gitment" class="headerlink" title="2.引用gitment"></a>2.引用gitment</h2><p>找到自己的主题文件路径，然后在页面里引用<code>gitment</code>代码。<br><code>next</code>主题没有在配置里直接引用<code>gitment</code>，需要自己手动在页面文件里头引用。在<code>next</code> –&gt; <code>layout</code> –&gt; <code>_partials</code> –&gt; <code>comments.swig</code>里面引入下面即可：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://imsun.github.io/gitment/style/default.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://imsun.github.io/gitment/dist/gitment.browser.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> gitment = <span class="keyword">new</span> Gitment(&#123;</div><div class="line">  <span class="attr">id</span>: <span class="string">'页面 ID'</span>, <span class="comment">// 可选。默认为 location.href</span></div><div class="line">  owner: <span class="string">'你的 GitHub ID'</span>,</div><div class="line">  <span class="attr">repo</span>: <span class="string">'存储评论的 repo'</span>,</div><div class="line">  <span class="attr">oauth</span>: &#123;</div><div class="line">    <span class="attr">client_id</span>: <span class="string">'你的 client ID'</span>,</div><div class="line">    <span class="attr">client_secret</span>: <span class="string">'你的 client secret'</span>,</div><div class="line">  &#125;,</div><div class="line">&#125;)</div><div class="line">gitment.render(<span class="string">'container'</span>)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="6.png" alt=""></p>
+<p><strong>注：根据自己的主题去引用代码，如果主题已经有gitment相应的配置，那么就不需要再引用代码，直接配置相应的client id, client secret等设置就可以。是否有配置可以看主题配置文件<code>_config.yml</code></strong></p>
+<h2 id="3-页面初始化"><a href="#3-页面初始化" class="headerlink" title="3.页面初始化"></a>3.页面初始化</h2><p>根据上面的步骤操作完成之后将代码<code>push</code>上去，然后在文章页面进行初始化操作；<br><img src="7.png" alt=""></p>
+<h1 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h1><p>问题：页面初始化<code>gitment</code>失败，请求<code>https://api.github.com/repos/Isrenx/isrenx.github.io/issues</code>报错，<code>status code</code>为422;<br><img src="2.png" alt=""><br><img src="3.png" alt=""><br>分析：<code>gitment</code>是基于<code>GitHub Issues</code>做的，初始化<code>gitment</code>的本质是发送一个<code>github</code>提供的api请求去创建一个<code>issues</code>。<code>gitment</code>默认的<code>issues</code>title是<code>new Gitment</code>时设置的<code>id</code>。默认是<code>location.href</code>，中文标题还会转义。而<code>GitHub Issues</code>的title是有长度限制的，如果我们的文章名字过长就会导致创建<code>issues</code>失败。</p>
+<p>解决：<br>    1.<code>id</code>字段传值可以使用<code>&lt;% page.date %&gt;</code>,通过时间作为<code>issues</code>标题。但是这个方法有限制，像<code>next</code>主题使用的是<code>swig</code>为后缀，在使用<code>page.date</code>会报错，不能使用；</p>
+<pre><code>2. 因为我的文章标题名字都比较长，即使用`window.location.pathname`也还是过长，所以我用正则(`window.location.pathname.match(/([^\/]+)/g)[3].slice(0, 50)`)去选取其中一部分，能够让我区别每篇文章就行；
+</code></pre><p><strong>注：解决方法其实就是围绕id传值的长度来做限制，其实方法有很多种，看自己怎样去选能够区别每篇文章的标题就行</strong></p>
+<p><strong>参考：</strong><br>1.<a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="external">Gitment：使用 GitHub Issues 搭建评论系统</a><br>2.<a href="http://xichen.pub/2018/01/31/2018-01-31-gitment/" target="_blank" rel="external">添加Gitment评论系统踩过的坑</a></p>
+
       
     </div>
 
@@ -397,6 +438,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/gitment/" rel="tag"># gitment</a>
+          
+        </div>
       
 
       
@@ -479,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -517,7 +575,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -587,6 +645,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、接入前准备"><span class="nav-number">1.</span> <span class="nav-text">一、接入前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-注册OAuth-Application"><span class="nav-number">1.1.</span> <span class="nav-text">1.注册OAuth Application</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引用gitment"><span class="nav-number">1.2.</span> <span class="nav-text">2.引用gitment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-页面初始化"><span class="nav-number">1.3.</span> <span class="nav-text">3.页面初始化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">2.</span> <span class="nav-text">踩坑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
